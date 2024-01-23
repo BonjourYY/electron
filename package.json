@@ -1,0 +1,50 @@
+{
+  "name": "my-electron-app",
+  "version": "1.0.0",
+  "description": "Hello World",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder build -w",
+    "release": "electron-builder -p always"
+  },
+  "postinstall": "electron-builder install-app-deps",
+  "build": {
+    "appId": "undefined",
+    "productName": "JackFan",
+    "copyright": "Copyright © 2024 JackFan",
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64",
+            "ia32"
+          ]
+        }
+      ]
+    },
+    "publish": [
+      "github"
+    ]
+  },
+  "author": "Jack Fan",
+  "license": "MIT",
+  "devDependencies": {
+    "@electron-forge/cli": "^7.2.0",
+    "@electron-forge/maker-deb": "^7.2.0",
+    "@electron-forge/maker-rpm": "^7.2.0",
+    "@electron-forge/maker-squirrel": "^7.2.0",
+    "@electron-forge/maker-zip": "^7.2.0",
+    "@electron-forge/plugin-auto-unpack-natives": "^7.2.0",
+    "@electron-forge/publisher-github": "^7.2.0",
+    "electron": "^28.1.4",
+    "electron-builder": "^24.9.1"
+  },
+  "dependencies": {
+    "electron-squirrel-startup": "^1.0.0"
+  }
+}
